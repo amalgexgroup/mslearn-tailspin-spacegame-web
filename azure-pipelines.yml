@@ -23,7 +23,7 @@ steps:
 
 - task: Npm@1
   displayName: 'Run npm install'
-  input:
+  inputs:
     verbose: false
 
 - script: '/node_modules/.bin/node-saas Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot'
@@ -44,7 +44,7 @@ steps:
     
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - Release'
-  inupts:
+  inputs:
     command: 'build'
     arguments: '--no-restore --configuration Release'
     projects: '**/*.csproj'
